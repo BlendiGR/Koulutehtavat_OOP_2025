@@ -12,6 +12,8 @@ public class LibraryMain {
         myLibrary.addBook(book2);
         myLibrary.addBook(book3);
 
+        User user = new User("Blendi", 23);
+
         myLibrary.displayBooks();
 
         Scanner input = new Scanner(System.in);
@@ -35,6 +37,28 @@ public class LibraryMain {
         } else {
             System.out.println("No title entered.");
         }
+
+        System.out.print("\nEnter title to borrow: ");
+        String borrowTitle = input.nextLine().trim();
+        if (!borrowTitle.isEmpty()) {
+            myLibrary.borrowBook(borrowTitle, user);
+        } else {
+            System.out.println("No title entered.");
+        }
+
+        myLibrary.displayBorrowedBooks(user);
+        myLibrary.displayBooks();
+
+        System.out.print("\nEnter title to return: ");
+        String returnTitle = input.nextLine().trim();
+        if (!returnTitle.isEmpty()) {
+            myLibrary.returnBook(returnTitle, user);
+        } else {
+            System.out.println("No title entered.");
+        }
+
+        myLibrary.displayBorrowedBooks(user);
+        myLibrary.displayBooks();
 
         input.close();
     }

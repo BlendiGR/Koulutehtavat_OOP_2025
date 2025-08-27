@@ -9,6 +9,10 @@ public class Library {
 
     public void displayBooks() {
         System.out.println("Library Catalog:");
+        if (books.isEmpty()) {
+            System.out.println("(no books available)");
+            return;
+        }
         int bookNo = 1;
         for (Book book : books) {
             System.out.println(bookNo + ". Title: \"" + book.getTitle() +
@@ -37,7 +41,7 @@ public class Library {
 
     public boolean isBookAvailable(String title) {
         for (Book book : books) {
-            if (book.getTitle().toLowerCase().contains(title.toLowerCase())) {
+            if (book.getTitle().equalsIgnoreCase(title)) {
                 return true;
             }
         }
@@ -68,17 +72,52 @@ public class Library {
         return mostReviewed;
     }
 
-    public void borrowBook(User user, Book book) {
-        if (books.contains(book)) {
-            user.borrowBook(book);
-            books.remove(book);
+    // Borrow book by title (tracks user + removes from library)
+    public void borrowBook(String title, User user) {
+        Book toBorrow = null;
+        for (Book book : books) {
+            if (book.getTitle().equalsIgnoreCase(title)) {
+                toBorrow = book;
+                break;
+            }
+        }
+        if (toBorrow != null) {
+            user.borrowBook(toBorrow);
+            books.remove(toBorrow);
+            System.out.println(user.getName() + " borrowed \"" + toBorrow.getTitle() + "\"");
+        } else {
+            System.out.println("Book \"" + title + "\" is not available.");
         }
     }
 
-    public void returnBook(User user, Book book) {
-        if (user.getBorrowedBooks().contains(book)) {
-            user.returnBook(book);
-            books.add(book);
+    // Return book by title (adds back to library)
+    public void returnBook(String title, User user) {
+        Book toReturn = null;
+        for (Book book : user.getBorrowedBooks()) {
+            if (book.getTitle().equalsIgnoreCase(title)) {
+                toReturn = book;
+                break;
+            }
+        }
+        if (toReturn != null) {
+            user.returnBook(toReturn);
+            books.add(toReturn);
+            System.out.println(user.getName() + " returned \"" + toReturn.getTitle() + "\"");
+        } else {
+            System.out.println(user.getName() + " does not have \"" + title + "\" borrowed.");
+        }
+    }
+
+    public void displayBorrowedBooks(User user) {
+        System.out.println(user.getName() + " has borrowed:");
+        if (user.getBorrowedBooks().isEmpty()) {
+            System.out.println("(none)");
+            return;
+        }
+        int i = 1;
+        for (Book book : user.getBorrowedBooks()) {
+            System.out.println(i + ". \"" + book.getTitle() + "\" by " + book.getAuthor());
+            i++;
         }
     }
 }
