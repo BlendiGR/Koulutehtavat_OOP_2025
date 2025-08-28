@@ -2,7 +2,8 @@ public class Triangle extends Shape {
     private double base;
     private double height;
 
-    public Triangle(double height, double base){
+    public Triangle(String color, double height, double base){
+        super(color);
         this.base = base;
         this.height = height;
     }
@@ -14,7 +15,7 @@ public class Triangle extends Shape {
 
     @Override
     public String toString() {
-        return "Triangle with base " + this.base +
+        return this.color + " Triangle with base " + this.base +
                 " and height " + this.height +
                 " has area " + calculateArea();
     }

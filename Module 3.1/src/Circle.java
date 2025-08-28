@@ -4,7 +4,8 @@ public class Circle extends Shape {
 
     private double radius;
 
-    public Circle(double radius){
+    public Circle(String color, double radius){
+        super(color);
         this.radius = radius;
 
     }
@@ -16,7 +17,7 @@ public class Circle extends Shape {
 
     @Override
     public String toString() {
-        return "Circle with radius " + this.radius +
+        return this.color+ " Circle with radius " + this.radius +
                 " has area " + calculateArea();
     }
 
