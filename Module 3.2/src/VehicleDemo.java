@@ -1,8 +1,9 @@
+// VehicleDemo.java
 public class VehicleDemo {
     public static void main(String[] args) {
-        Car car = new Car("Petrol", "Red");
-        Motorcycle motorcycle = new Motorcycle("Gasoline", "Black");
-        Bus bus = new Bus("Diesel", 40);
+        Car car = new Car("Mercedes Benz", 2005, "Petrol", "Red");
+        Motorcycle motorcycle = new Motorcycle("KTM", 2011, "Gasoline", "Black");
+        Bus bus = new Bus("Scania", 2009, "Diesel", 40);
 
         System.out.println("Vehicle Demonstration\n");
 

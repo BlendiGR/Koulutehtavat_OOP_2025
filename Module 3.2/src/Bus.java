@@ -1,25 +1,16 @@
 // Bus.java
-public class Bus implements Vehicle {
+public class Bus extends AbstractVehicle {
     private String fuel;
     private int capacity;
 
-    public Bus(String fuel, int capacity) {
+    public Bus(String brand, int year, String fuel, int capacity) {
+        super(brand, year);
         this.fuel = fuel;
         this.capacity = capacity;
     }
 
     @Override
-    public void start() {
-        System.out.println("Bus is starting...");
-    }
-
-    @Override
-    public void stop() {
-        System.out.println("Bus is stopping...");
-    }
-
-    @Override
     public String getInfo() {
-        return "Type: Bus\nFuel: " + fuel + "\nCapacity: " + capacity + " passengers";
+        return baseInfo("Bus") + "\nFuel: " + fuel + "\nCapacity: " + capacity + " passengers";
     }
 }

@@ -1,21 +1,12 @@
 // Motorcycle.java
-public class Motorcycle implements Vehicle {
+public class Motorcycle extends AbstractVehicle {
     private String fuel;
     private String color;
 
-    public Motorcycle(String fuel, String color) {
+    public Motorcycle(String brand, int year, String fuel, String color) {
+        super(brand, year);
         this.fuel = fuel;
         this.color = color;
-    }
-
-    @Override
-    public void start() {
-        System.out.println("Motorcycle is starting...");
-    }
-
-    @Override
-    public void stop() {
-        System.out.println("Motorcycle is stopping...");
     }
 
     @Override
