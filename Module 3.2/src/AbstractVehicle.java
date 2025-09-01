@@ -1,11 +1,13 @@
 // AbstractVehicle.java
-public abstract class AbstractVehicle implements Vehicle {
+public abstract class AbstractVehicle implements Vehicle, ElectricVehicle {
     protected String brand;
     protected int year;
+    protected String fuel;
 
-    public AbstractVehicle(String brand, int year) {
+    public AbstractVehicle(String brand, int year, String fuel) {
         this.brand = brand;
         this.year = year;
+        this.fuel = fuel;
     }
 
     @Override
@@ -16,6 +18,13 @@ public abstract class AbstractVehicle implements Vehicle {
     @Override
     public void stop() {
         System.out.println(brand + " is stopping...");
+    }
+
+    @Override
+    public void charge() {
+        if ("electric".equalsIgnoreCase(fuel)){
+            System.out.println("Charging.....");
+        } else System.out.println("Not possible to charge Combustion Engine.");
     }
 
     protected String baseInfo(String type) {

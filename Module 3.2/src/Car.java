@@ -1,11 +1,9 @@
 // Car.java
 public class Car extends AbstractVehicle {
-    private String fuel;
     private String color;
 
     public Car(String brand, int year, String fuel, String color) {
-        super(brand, year);
-        this.fuel = fuel;
+        super(brand, year, fuel);
         this.color = color;
     }
 
