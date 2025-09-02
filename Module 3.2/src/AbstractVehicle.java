@@ -3,6 +3,7 @@ public abstract class AbstractVehicle implements Vehicle, ElectricVehicle {
     protected String brand;
     protected int year;
     protected String fuel;
+    protected double fuelEfficiency;
 
     public AbstractVehicle(String brand, int year, String fuel) {
         this.brand = brand;
@@ -33,4 +34,5 @@ public abstract class AbstractVehicle implements Vehicle, ElectricVehicle {
 
     @Override
     public abstract String getInfo();
+
 }

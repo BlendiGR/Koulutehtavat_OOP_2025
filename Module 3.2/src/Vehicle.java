@@ -1,9 +1,7 @@
+
 public interface Vehicle {
-    default void start(){
-        System.out.println("Engine starting...");
-    }
-    default void stop(){
-        System.out.println("Vehicle stopping...");
-    }
+    void start();
+    void stop();
     String getInfo();
+    double calculateFuelEfficiency(); // returns the numeric value; unit handled in info
 }

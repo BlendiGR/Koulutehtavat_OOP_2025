@@ -1,9 +1,12 @@
-// Bus.java
+
 public class Bus extends AbstractVehicle {
+    private String fuel;
     private int capacity;
 
-    public Bus(String brand, int year, String fuel, int capacity) {
-        super(brand, year, fuel);
+    public Bus(String brand, int year, String fuel, int capacity,
+               double efficiencyValue, String efficiencyUnit) {
+        super(brand, year, efficiencyValue, efficiencyUnit);
+        this.fuel = fuel;
         this.capacity = capacity;
     }
 

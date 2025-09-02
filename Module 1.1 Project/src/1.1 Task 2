@@ -1,0 +1,5 @@
+Supermarket as an example:
+A supermarket has variability like customer arrival times,  number of items per basket,
+cashier speed and item restocking.
+It is also complex involving multiple checkout lines, self-checkout vs staffed counters, inventory and promotions, which affect demand.
+A market also has a lot of delays which affect customer satisfaction.
