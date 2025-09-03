@@ -10,7 +10,7 @@ public class CustomerGenerator {
     public void generate() {
         for (int i = 0; i < count; i++) {
             Customer c = new Customer(System.nanoTime());
-            sp.addToQueueue(c);
+            sp.addToQue(c);
         }
     }
 }

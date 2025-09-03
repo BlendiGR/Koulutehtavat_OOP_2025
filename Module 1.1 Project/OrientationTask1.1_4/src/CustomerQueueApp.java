@@ -7,7 +7,7 @@ public class CustomerQueueApp {
         Scanner sc = new Scanner(System.in);
 
         while (true) {
-            System.out.println("\nChoose: [1] Enqueue  [2] Dequeue  [3] Size  [0] Exit");
+            System.out.println("\nChoose: [1] Enque  [2] Deque  [3] Size  [0] Exit");
             String choice = sc.nextLine().trim();
 
             if ("1".equals(choice)) {
@@ -33,6 +33,5 @@ public class CustomerQueueApp {
                 System.out.println("Invalid choice.");
             }
         }
-        sc.close();
     }
 }

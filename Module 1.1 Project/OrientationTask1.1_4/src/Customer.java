@@ -1,6 +1,6 @@
 public class Customer {
-    private static int nextId = 1; // keeps track of the next available id
-    private int id;                // each customer has their own id
+    private static int nextId = 1;
+    private int id;
     private long startTime;
     private long endTime;
 
