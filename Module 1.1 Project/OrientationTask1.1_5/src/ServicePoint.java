@@ -4,18 +4,18 @@ import java.util.concurrent.ThreadLocalRandom;
 public class ServicePoint {
     private final LinkedList<Customer> queue = new LinkedList<>();
 
-    public void addToQueueue(Customer a) {
-        queue.addFirst(a);
+    public void addToQue(Customer customer) {
+        queue.addFirst(customer);
     }
 
-    public Customer removeFromQueueue() {
+    public Customer removeFromQue() {
         if (queue.isEmpty()) return null;
         return queue.removeLast();
     }
 
     public void serve() {
         while (true) {
-            Customer c = removeFromQueueue();
+            Customer c = removeFromQue();
             if (c == null) break;
 
             long serviceStart = System.nanoTime();
@@ -27,7 +27,6 @@ public class ServicePoint {
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
-
             long end = System.nanoTime();
             c.setEndTime(end);
 
@@ -46,7 +45,7 @@ public class ServicePoint {
 
         for (int i = 0; i < 5; i++) {
             Customer c = new Customer(System.nanoTime());
-            sp.addToQueueue(c);
+            sp.addToQue(c);
         }
 
         sp.serve();
