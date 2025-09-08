@@ -1,0 +1,7 @@
+a)
+
+When 1 customer arrives, we need to generate new arrivals so that we have constant customer flow.
+
+b)
+
+A event that has the completion time, so the customer can exit then, and make space for a new one.

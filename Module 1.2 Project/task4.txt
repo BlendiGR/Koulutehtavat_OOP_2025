@@ -1,0 +1,17 @@
+
+Clock 15:
+- A new X3 call arrives. It goes to the router.
+- Router starts working on X3, will finish at 16.
+- Operator1 is busy with X2, will finish at 16.
+- Operator2 is busy with Y1, will finish at 18.
+- Work complete: X = 1, Y = 0
+
+Clock 16:
+- Operator1 finishes X2. Work complete: X = 2, Y = 0
+- Router finishes X3 and gives it to Operator1.
+- Operator1 starts X3, will finish at 20.
+- Operator2 still busy with Y1, will finish at 18.
+
+Clock 18:
+- Operator2 finishes Y1. Work complete: X = 2, Y = 1
+- This is the first Y-type customer to leave the system.
