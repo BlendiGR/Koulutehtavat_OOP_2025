@@ -1,0 +1,22 @@
+I would first get the ages and make it a % like this:
+
+imagine we have 30 students,
+
+5 of them are 25,  10 of them 27, 10 of them 28, and the rest of 5 30.
+
+year and %
+
+25      16.6
+
+27      33.3
+
+28      33.3
+
+30      16.6
+
+Then I will convert it to the list:
+
+   25        27      28      30
+0  ->   17 ->   40 ->    74  ->  100
+
+then we will generate randon numbers and where the numbers fall in thats the random age.

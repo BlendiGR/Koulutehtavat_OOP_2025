@@ -3,7 +3,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 
-public class Fibonacci{
+public class Fibonacci {
+
     public static void main(String[] args) {
         try (Writer writer = new FileWriter("fibo.csv", true);
              BufferedWriter bufferedWriter = new BufferedWriter(writer)) {
