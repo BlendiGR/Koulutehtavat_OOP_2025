@@ -1,8 +1,8 @@
 public class Event implements Comparable<Event>{
     int time;
-    String type;
+    EventType type;
 
-    public Event(int time, String type) {
+    public Event(int time, EventType type) {
         this.time = time;
         this.type = type;
     }

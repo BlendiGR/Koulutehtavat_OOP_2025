@@ -26,9 +26,9 @@ public class EventList {
     public static void main(String[] args) {
         EventList el = new EventList();
 
-        el.add(new Event(15, "Arrival-X"));
-        el.add(new Event(10, "Arrival-Y"));
-        el.add(new Event(20, "Service-Done"));
+        el.add(new Event(15, EventType.ARRIVAL));
+        el.add(new Event(10, EventType.EXIT));
+        el.add(new Event(20, EventType.SERVICEDONE));
 
         System.out.println("Next event: " + el.getNext());
 
