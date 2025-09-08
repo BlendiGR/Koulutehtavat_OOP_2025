@@ -1,0 +1,8 @@
+normal distribution, bell curve:
+    could be used for modeling how long a customer might take at checkout.
+
+poisson distribution:
+    could be used for modeling number of arrivals to a store or in real life how many emails you get per hour.
+
+exponential distribution:
+    phone call wait times and modeling arrival times.

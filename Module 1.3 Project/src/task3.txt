@@ -1,0 +1,2 @@
+Singleton is a object of a class that only 1 should ever exist.
+To make it, we need to make the constructor private.
