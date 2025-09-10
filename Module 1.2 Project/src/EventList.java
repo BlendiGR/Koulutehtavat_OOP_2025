@@ -8,7 +8,7 @@ public class EventList {
     }
 
     public Event getNext() {
-        return pq.poll();  // removes and returns earliest event
+        return pq.poll();
     }
 
     public boolean isEmpty() {

@@ -13,7 +13,6 @@ public class RandomAges {
 
         int generatedAges[] = new int[MAXAGE+1];
 
-        // Generate ages according to the distribution:
         for (int i = 1; i <= REITERATIONS; i++){
             int x = (int)(Math.random()*100)+1; 	// generate a random number 1..100 -> we get the row which gives the age
             int j = 0;
@@ -21,7 +20,6 @@ public class RandomAges {
             generatedAges[agedistribution[j][1]]++; // age founded gives an index to the generated ages count table: increment it (by one)
         }
 
-        // Output the result of the generation:
         System.out.println("Age  count     %-share");
         for (int age = 0; age <= MAXAGE; age++) {
             if (generatedAges[age] != 0) {
